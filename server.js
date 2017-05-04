@@ -5,8 +5,10 @@ var express = require('express');
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var path = require("path");
-
+var mongoose = require('mongoose');
 var PORT = process.env.PORT || 3000;
+var shortUrl = require("./models/shortUrl");
+
 
 var app = express();
 
@@ -14,14 +16,61 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(cors());
 
+// connect to mongodb via mongoose
+// first option is mongo on Heroku and the second is mongo locally
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlShortener');
 
-var api = '/urlShortener';
 
-app.get(api, function (req, res) {
+var regex =/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
+app.get('/urlShortener/new/:url(*)', function (req, res) {
+
+    var urlToShorten = req.params.url;
+
+    if(regex.test(urlToShorten) === true){
+        var newShortUrl = Math.floor(Math.random()*1000000).toString();
+
+        var data = new shortUrl({
+            originalUrl: urlToShorten,
+            shortenedUrl: newShortUrl
+        });
+
+        data.save(function(err){
+            if(err){
+                return res.send('Error saving to database');
+            }
+        });
+
+        return res.json(data);
+    }
+
+    return res.json({
+        originalUrl: urlToShorten,
+        shortenedUrl: "Invalid Entry"
+    });
+
+
+    // return res.json({url: urlToShorten});
 });
 
 
+
+app.get('/urlShortener/:url', function (req, res, next) {
+
+    var url = req.params.url;
+
+    shortUrl.findOne({shortenedUrl: url}, function(err, data){
+       if(err){
+           next(err);
+           return res.send('Error reading database');
+       } if(data) {
+           res.redirect(301, 'http://' + data.originalUrl);
+       } else {
+           return res.send('No record exists for this shortened URL.');
+        }
+    });
+
+});
 
 
 
