@@ -1,0 +1,183 @@
+body {
+    padding-top: 10%;
+}
+
+body, .quoteContainer {
+    background-color: black;
+}
+
+hr {
+    border-top: 1px solid #39FF14 !important;
+    box-shadow: 0px 0px 5px #39FF14 !important;
+}
+
+p, p span, .secondaryTitle, hr, .blinking-cursor {
+    font-family: 'Nixie One', cursive !important;
+    color: #39FF14 !important;
+    text-shadow: 0px 0px 5px #39FF14 !important;
+}
+.results {
+    border: solid 1px #39FF14;
+    box-shadow: inset 1px 1px 2px 0 #39FF14, 1px 1px 2px 0 #39FF14;
+    float: right;
+    width: 100%;
+    min-height: 195px;
+    margin-bottom: 14px;
+    padding: 35px 0;
+}
+
+
+
+.quoteContainer {
+    min-height: 250px;
+    min-width: 432px;
+    padding-top: 30px;
+}
+
+
+.rounded {
+    border-radius: 12px;
+}
+
+
+/* buttons */
+
+
+p span {
+    font-size: 11px;
+    padding-right: 5px;
+    text-shadow: none;
+}
+
+
+#submitDateButton {
+    padding: 0 5px 16px 0 !important;
+}
+
+p {
+    margin: 0 10px !important;
+    font-size: 29px;
+}
+
+.description {
+    font-size: 18px;
+    text-shadow: none;
+}
+
+.mainTitle {
+    font-size: 23px;
+}
+
+.secondaryTitle {
+    font-size: 42px !important;
+    margin-top: 5px;
+
+}
+
+input {
+    padding: 0 0 0 5px !important;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input, #submitDateButton, .quoteContainer {
+    border-radius: 11px;
+}
+
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+/*loader*/
+.loader {
+    border: 6px solid #39FF14;
+    border-top: 6px solid #2b9c2f;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin-top: 29px;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+/*blinking cursor*/
+
+
+.blinking-cursor {
+    position: absolute;
+    top: 98px;
+    font-size: 42px;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #39FF14;
+    }
+}
+
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #39FF14;
+    }
+}
+
+@-webkit-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #39FF14;
+    }
+}
+
+@-ms-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #39FF14;
+    }
+}
+
+@-o-keyframes "blink" {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #39FF14;
+    }
+}
+
+
+
+
