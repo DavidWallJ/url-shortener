@@ -23,12 +23,14 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlShortener');
 
 var regex =/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
-app.get('/urlShortener/new/:url(*)', function (req, res) {
+app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url(*)', function (req, res) {
 
     var urlToShorten = req.params.url;
 
     if(regex.test(urlToShorten) === true){
         var newShortUrl = Math.floor(Math.random()*1000000).toString();
+
+        // lets create some before save middle ware to ensure that the random newShortUrl doesn't already exist.  if it does, make a new new one.
 
         var data = new shortUrl({
             originalUrl: urlToShorten,
@@ -55,7 +57,7 @@ app.get('/urlShortener/new/:url(*)', function (req, res) {
 
 
 
-app.get('/urlShortener/:url', function (req, res, next) {
+app.get('https://url-shortener-davidjwall.herokuapp.com/:url', function (req, res, next) {
 
     var url = req.params.url;
 
