@@ -20,12 +20,12 @@ MONGOLAB_URI="mongodb://DavidJWall:Meiguanxi8@ds127101.mlab.com:27101/url-shorte
 
 // connect to mongodb via mongoose
 // first option is mongo on Heroku and the second is mongo locally
-mongoose.connect(process.env.MONGODLAB_URI || 'mongodb://localhost/urlShortener');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlShortener');
 
 
 var regex =/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
-app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url', function (req, res) {
+app.get('/urlShortener/new/:url(*)', function (req, res) {
 
     var urlToShorten = req.params.url;
 
@@ -59,7 +59,7 @@ app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url', function (req
 
 
 
-app.get('https://url-shortener-davidjwall.herokuapp.com/:url', function (req, res, next) {
+app.get('/urlShortener/:url', function (req, res, next) {
 
     var url = req.params.url;
 
@@ -76,10 +76,13 @@ app.get('https://url-shortener-davidjwall.herokuapp.com/:url', function (req, re
 
 });
 
-app.get('https://url-shortener-davidjwall.herokuapp.com/', function (req, res, next) {
+var api = '/test/whoami';
 
-    res.send("welcome");
-
+app.get(api, function (req, res) {
+    var lang =  req.acceptsLanguages();
+    var software = req.useragent.os;
+    var ipaddress = req.ip;
+    res.json({"ipaddress": ipaddress, "language": lang[0], "software": software })
 });
 
 if (PORT === 3000) {
