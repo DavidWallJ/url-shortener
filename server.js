@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(cors());
 
-MONGOLAB_URI="mongodb://DavidJWall:Meiguanxi8@ds127101.mlab.com:27101/url-shortener";
+// MONGOLAB_URI="mongodb://DavidJWall:Meiguanxi8@ds127101.mlab.com:27101/url-shortener";
 
 // connect to mongodb via mongoose
 // first option is mongo on Heroku and the second is mongo locally
