@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODLAB_URI || 'mongodb://localhost/urlShortener'
 
 var regex =/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
-app.get('/urlShortener/new/:url(*)', function (req, res) {
+app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url', function (req, res) {
 
     var urlToShorten = req.params.url;
 
@@ -59,7 +59,7 @@ app.get('/urlShortener/new/:url(*)', function (req, res) {
 
 
 
-app.get('/urlShortener/:url', function (req, res, next) {
+app.get('https://url-shortener-davidjwall.herokuapp.com/:url', function (req, res, next) {
 
     var url = req.params.url;
 
@@ -76,7 +76,11 @@ app.get('/urlShortener/:url', function (req, res, next) {
 
 });
 
+app.get('https://url-shortener-davidjwall.herokuapp.com/', function (req, res, next) {
 
+    res.send("welcome");
+
+});
 
 if (PORT === 3000) {
     app.get('/urlShortener/', function (req, res) {
