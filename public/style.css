@@ -3,22 +3,22 @@ body {
 }
 
 body, .quoteContainer {
-    background-color: black;
+    background-color: blue;
 }
 
 hr {
-    border-top: 1px solid #39FF14 !important;
-    box-shadow: 0px 0px 5px #39FF14 !important;
+    border-top: 1px solid #ffffff !important;
+    box-shadow: 0px 0px 5px #ffffff !important;
 }
 
 p, p span, .secondaryTitle, hr, .blinking-cursor {
     font-family: 'Nixie One', cursive !important;
-    color: #39FF14 !important;
-    text-shadow: 0px 0px 5px #39FF14 !important;
+    color: #ffffff !important;
+    text-shadow: 0px 0px 5px #ffffff !important;
 }
 .results {
-    border: solid 1px #39FF14;
-    box-shadow: inset 1px 1px 2px 0 #39FF14, 1px 1px 2px 0 #39FF14;
+    border: solid 1px #ffffff;
+    box-shadow: inset 1px 1px 2px 0 #ffffff, 1px 1px 2px 0 #ffffff;
     float: right;
     width: 100%;
     min-height: 195px;
@@ -101,7 +101,7 @@ input, #submitDateButton, .quoteContainer {
 
 /*loader*/
 .loader {
-    border: 6px solid #39FF14;
+    border: 6px solid #ffffff;
     border-top: 6px solid #2b9c2f;
     border-radius: 50%;
     width: 60px;
@@ -123,8 +123,6 @@ input, #submitDateButton, .quoteContainer {
 
 
 .blinking-cursor {
-    position: absolute;
-    top: 98px;
     font-size: 42px;
     -webkit-animation: 1s blink step-end infinite;
     -moz-animation: 1s blink step-end infinite;
@@ -138,7 +136,7 @@ input, #submitDateButton, .quoteContainer {
         color: transparent;
     }
     50% {
-        color: #39FF14;
+        color: #ffffff;
     }
 }
 
@@ -147,7 +145,7 @@ input, #submitDateButton, .quoteContainer {
         color: transparent;
     }
     50% {
-        color: #39FF14;
+        color: #ffffff;
     }
 }
 
@@ -156,7 +154,7 @@ input, #submitDateButton, .quoteContainer {
         color: transparent;
     }
     50% {
-        color: #39FF14;
+        color: #ffffff;
     }
 }
 
@@ -165,7 +163,7 @@ input, #submitDateButton, .quoteContainer {
         color: transparent;
     }
     50% {
-        color: #39FF14;
+        color: #ffffff;
     }
 }
 
@@ -174,7 +172,7 @@ input, #submitDateButton, .quoteContainer {
         color: transparent;
     }
     50% {
-        color: #39FF14;
+        color: #ffffff;
     }
 }
 
