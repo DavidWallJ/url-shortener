@@ -16,6 +16,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(cors());
 
+MONGOLAB_URI="mongodb://DavidJWall:Meiguanxi8@ds127101.mlab.com:27101/url-shortener";
+
 // connect to mongodb via mongoose
 // first option is mongo on Heroku and the second is mongo locally
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlShortener');
@@ -23,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlShortener');
 
 var regex =/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
-app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url(*)', function (req, res) {
+app.get('/urlShortener/new/:url(*)', function (req, res) {
 
     var urlToShorten = req.params.url;
 
@@ -57,7 +59,7 @@ app.get('https://url-shortener-davidjwall.herokuapp.com/new/:url(*)', function (
 
 
 
-app.get('https://url-shortener-davidjwall.herokuapp.com/:url', function (req, res, next) {
+app.get('/urlShortener/:url', function (req, res, next) {
 
     var url = req.params.url;
 
