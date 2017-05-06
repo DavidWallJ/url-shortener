@@ -48,7 +48,7 @@ app.get('/new/:url(*)', function (req, res) {
 
     return res.json({
         originalUrl: urlToShorten,
-        shortenedUrl: "Invalid Entry"
+        shortenedUrl: "Invalid URL"
     });
 
 
