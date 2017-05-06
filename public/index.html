@@ -7,36 +7,53 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Butterfly+Kids" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
 
     <title>Date Converter</title>
 </head>
 <body>
 <div class="container">
 
-    <div class="col-sm-6 col-sm-offset-3 quoteContainer rounded">
-        <p class="description mainTitle text-center"><i class="fa fa-free-code-camp" aria-hidden="true"></i> URL Shortener Microservice</p>
+    <div class="col-sm-8 col-sm-offset-2 quoteContainer rounded">
+        <p class="description mainTitle text-center"><i class="fa fa-free-code-camp" aria-hidden="true"></i> URL
+            Shortener Microservice</p>
         <hr>
-        <h1 class="secondaryTitle text-center">You've been hacked...<span class="blinking-cursor">|</span></h1>
 
-        <div class="results rounded text-center">
-            Your content here ...
-            <div class="loader center-block"></div>
+        <div class="outerContainer">
+            <form>
+
+                <div class="group text-center" >
+                    <input type="text" id="animatedInput" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label id="animatedInputLabel">ENTER URL: </label>
+                    <span><a href="#" target="_blank" id="shortenedAddress" data-anijs="if: click, on: #animatedInputLabel, do: flipInY animated"></a></span>
+                </div>
+
+            </form>
         </div>
-
-        <p class="description"><i class="fa fa-star-o" aria-hidden="true"></i> Created using: NPM, Express, MongoDB, Heroku, and jQuery.</p>
-        <p class="description"><i class="fa fa-star-o" aria-hidden="true"></i> This is a full-stack app where the user can pass a URL as a parameter and then receive a shortened URL which can act as a redirecting link for the original address.</p>
+        <div class="text-center">
+            <p class="description"><i class="fa fa-globe" aria-hidden="true"></i></i> Created using: NPM, Express,
+                MongoDB,
+                Heroku, and jQuery.</p>
+            <p class="description"><i class="fa fa-globe" aria-hidden="true"></i></i> This is a full-stack application
+                where the
+                user can pass a URL as a URL and then receive a shortened URL which can acts as a redirecting link for
+                the original address.</p>
+            <p class="description"><i class="fa fa-globe" aria-hidden="true"></i></i> The new shortened address is saved
+                in an online database for future use.</p>
+        </div>
     </div>
 </div>
-
-
-
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./index.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
 </body>
 </html>

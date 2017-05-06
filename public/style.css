@@ -1,37 +1,93 @@
 body {
     padding-top: 10%;
+    background-color: #6376d8;
 }
 
-body, .quoteContainer {
-    background-color: blue;
-}
 
 hr {
     border-top: 1px solid #ffffff !important;
-    box-shadow: 0px 0px 5px #ffffff !important;
+    padding-bottom: 10px;
 }
 
-p, p span, .secondaryTitle, hr, .blinking-cursor {
-    font-family: 'Nixie One', cursive !important;
+/* form starting stylings ------------------------------- */
+
+.outerContainer {
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+.group 			  {
+    position:relative;
+    margin-bottom:45px;
+    margin-left: auto;
+    margin-right: auto;
+}
+input {
+    font-family: 'Droid Sans', sans-serif;
+    font-size:28px;
+    padding:7px 94px 7px 20px;
+    display:block;
+    width:490px;
+    border:none;
+    /*border:2px solid #5264AE;*/
+    border-radius: 50px;
+    color: #5264AE;
+
+}
+
+
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label {
+
+    font-family: 'Julius Sans One', sans-serif;
+    color:#ffffff;
+    background-color: #6376d8;
+    font-size:20px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:3px;
+    top:3px;
+    border-radius: 50px;
+    padding: 10px;
+    max-height: 86px;
+    transition:1s ease all;
+    -moz-transition:1s ease all;
+    -webkit-transition:1s ease all;
+}
+
+#shortenedAddress {
+    font-family: 'Julius Sans One', sans-serif;
+    color: #5264AE;
+    position: absolute;
+    left: 257px;
+    top: 8px;
+    font-size: 29px;
+    visibility: hidden;
+}
+
+#shortenedAddress:hover {
+    text-decoration: none;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+    left:344px;
+}
+
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+
+
+p, p span, .secondaryTitle, hr, .blinking-cursor, label {
+    font-family: 'Julius Sans One', sans-serif !important;
     color: #ffffff !important;
-    text-shadow: 0px 0px 5px #ffffff !important;
-}
-.results {
-    border: solid 1px #ffffff;
-    box-shadow: inset 1px 1px 2px 0 #ffffff, 1px 1px 2px 0 #ffffff;
-    float: right;
-    width: 100%;
-    min-height: 195px;
-    margin-bottom: 14px;
-    padding: 35px 0;
-}
-
-
-
-.quoteContainer {
-    min-height: 250px;
-    min-width: 432px;
-    padding-top: 30px;
+    /*text-shadow: 0px 0px 5px #ffffff !important;*/
 }
 
 
@@ -43,16 +99,6 @@ p, p span, .secondaryTitle, hr, .blinking-cursor {
 /* buttons */
 
 
-p span {
-    font-size: 11px;
-    padding-right: 5px;
-    text-shadow: none;
-}
-
-
-#submitDateButton {
-    padding: 0 5px 16px 0 !important;
-}
 
 p {
     margin: 0 10px !important;
@@ -60,37 +106,22 @@ p {
 }
 
 .description {
-    font-size: 18px;
+    font-size: 16px;
     text-shadow: none;
 }
 
 .mainTitle {
-    font-size: 23px;
+    font-size: 20px;
 }
 
-.secondaryTitle {
-    font-size: 42px !important;
-    margin-top: 5px;
+/*.secondaryTitle {*/
+    /*font-size: 42px !important;*/
+    /*margin-top: 5px;*/
 
-}
-
-input {
-    padding: 0 0 0 5px !important;
-}
-
-textarea:focus, input:focus{
-    outline: none;
-}
-
-input, #submitDateButton, .quoteContainer {
-    border-radius: 11px;
-}
+/*}*/
 
 
-.btn:focus,.btn:active {
-    outline: none !important;
-    -webkit-box-shadow: none !important;
-}
+
 
 
 
@@ -122,59 +153,59 @@ input, #submitDateButton, .quoteContainer {
 /*blinking cursor*/
 
 
-.blinking-cursor {
-    font-size: 42px;
-    -webkit-animation: 1s blink step-end infinite;
-    -moz-animation: 1s blink step-end infinite;
-    -ms-animation: 1s blink step-end infinite;
-    -o-animation: 1s blink step-end infinite;
-    animation: 1s blink step-end infinite;
-}
+/*.blinking-cursor {*/
+    /*font-size: 42px;*/
+    /*-webkit-animation: 1s blink step-end infinite;*/
+    /*-moz-animation: 1s blink step-end infinite;*/
+    /*-ms-animation: 1s blink step-end infinite;*/
+    /*-o-animation: 1s blink step-end infinite;*/
+    /*animation: 1s blink step-end infinite;*/
+/*}*/
 
-@keyframes "blink" {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #ffffff;
-    }
-}
+/*@keyframes "blink" {*/
+    /*from, to {*/
+        /*color: transparent;*/
+    /*}*/
+    /*50% {*/
+        /*color: #ffffff;*/
+    /*}*/
+/*}*/
 
-@-moz-keyframes blink {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #ffffff;
-    }
-}
+/*@-moz-keyframes blink {*/
+    /*from, to {*/
+        /*color: transparent;*/
+    /*}*/
+    /*50% {*/
+        /*color: #ffffff;*/
+    /*}*/
+/*}*/
 
-@-webkit-keyframes "blink" {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #ffffff;
-    }
-}
+/*@-webkit-keyframes "blink" {*/
+    /*from, to {*/
+        /*color: transparent;*/
+    /*}*/
+    /*50% {*/
+        /*color: #ffffff;*/
+    /*}*/
+/*}*/
 
-@-ms-keyframes "blink" {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #ffffff;
-    }
-}
+/*@-ms-keyframes "blink" {*/
+    /*from, to {*/
+        /*color: transparent;*/
+    /*}*/
+    /*50% {*/
+        /*color: #ffffff;*/
+    /*}*/
+/*}*/
 
-@-o-keyframes "blink" {
-    from, to {
-        color: transparent;
-    }
-    50% {
-        color: #ffffff;
-    }
-}
+/*@-o-keyframes "blink" {*/
+    /*from, to {*/
+        /*color: transparent;*/
+    /*}*/
+    /*50% {*/
+        /*color: #ffffff;*/
+    /*}*/
+/*}*/
 
 
 
