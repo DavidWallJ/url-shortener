@@ -27,7 +27,7 @@ $(document).ready(function () {
                     $("#shortenedAddress").text(data.shortenedUrl);
                     $("#shortenedAddress").attr("href", "https://url-shortener-davidjwall.herokuapp.com/" + data.shortenedUrl);
                     setTimeout(function(){
-                        $("#shortenedAddress").css("visibility","visible");
+                        $("#shortenedAddress, .instructions").css("visibility","visible");
                         $("#animatedInputLabel").trigger( "click" );
                     }, 700);
 
