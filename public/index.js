@@ -14,18 +14,18 @@ $(document).ready(function () {
                 url: url,
                 success: function(data) {
                     // remove input val and exit text input box
-                    $("#animatedInput").val('');
-                    $( "#animatedInput" ).blur();
+                    $("#animatedInput").val('').blur();
 
                     // change label for obtained URL
 
-                    $("#animatedInputLabel").empty();
-                    $("#animatedInputLabel").append("SHORT URL:");
+                    $("#animatedInputLabel").empty().append("SHORT URL:");
 
                     // output new shortened URL
 
-                    $("#shortenedAddress").text(data.shortenedUrl);
-                    $("#shortenedAddress").attr("href", "https://url-shortener-davidjwall.herokuapp.com/" + data.shortenedUrl);
+                    $("#shortenedAddress")
+                        .text(data.shortenedUrl)
+                        .attr("href", "https://url-shortener-davidjwall.herokuapp.com/" + data.shortenedUrl);
+
                     setTimeout(function(){
                         $("#shortenedAddress, .instructions").css("visibility","visible");
                         $("#animatedInputLabel").trigger( "click" );
